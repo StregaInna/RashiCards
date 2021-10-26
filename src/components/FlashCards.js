@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { clearString, realKeyboard } from '../store/inputString'
 import { loadRashiScript, nextCard, reAddCard, shuffleDeck } from '../store/cardDeck';
 import { correctAnswer, incorrectAnswer, resetScore } from '../store/score';
 import Keyboard from './Keyboard'
@@ -95,7 +94,6 @@ class FlashCard extends React.Component {
 }
 const mapState = (state) => {
     return {
-        //inputString: state.inputString,
         cardDeck: state.cards.cardDeck,
         currentCard: state.cards.currentCard,
         cardIndex: state.cards.cardIndex,
@@ -104,12 +102,10 @@ const mapState = (state) => {
 }
 const mapDispatch = (dispatch) => {
     return{
-        //realKeyboard: (string) => dispatch(realKeyboard(string)),
         loadRashiScript: () => dispatch(loadRashiScript()),
         shuffle: () => dispatch(shuffleDeck()),
         nextCard: () => dispatch(nextCard()),
         reAddCard: () => dispatch(reAddCard()),
-        clearString: () => dispatch(clearString()),
         correctAnswer: () => dispatch(correctAnswer()),
         incorrectAnswer: () => dispatch(incorrectAnswer()),
         resetScore: () => dispatch(resetScore())

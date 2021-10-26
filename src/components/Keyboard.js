@@ -19,7 +19,6 @@ class HebrewKeyboard extends React.Component {
     render(){
         return(
             <div>
-                <h1></h1>
                 <div>{keboardArray[0].map((char)=>{
                     return(<button key={char} value={char} onClick={this.handleClick}>{char}</button>)
                 })}</div>
@@ -34,16 +33,5 @@ class HebrewKeyboard extends React.Component {
 
     }
 }
-// const mapState = (state) => {
-//     return {
-//         inputString: state.inputString
-//     }
-
-// }
-// const mapDispatch = (dispatch) => {
-//     return{
-//         virtualKeyboard: (letter) => dispatch(virtualKeyboard(letter))
-//     }
-// }
 
 export default HebrewKeyboard  
