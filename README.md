@@ -1,8 +1,23 @@
-# Getting Started with Create React App
+# Rashi Cards
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a flashcard app desinged to help someone trying to learn Rashi Script (see https://en.wikipedia.org/wiki/Rashi_script) 
+This project was originally created on a node-express backend as a student project.
+You can find an earlier version at: https://github.com/StregaInna/Rashi-Cards
+This version was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features:
+Currently the app loads a 'deck' of flashcards from src/store/data.js into a redux store at src/store/cardDeck.js 
+  and shuffles them in src/store/deckShuffler.js 
+Once the deck is prepared users can answer using either their own keyboard of the vitrual keyboard in src/components/Keyboard.js
+Cards answered incorrectly get readded to the end of the deck.
+For both correct and incorrect answers to score is adjusted and a feedback componenet is rendered at src/components/Feedback.js
+
+### next step features:
+I'd to add a manifest.json file to make this app into a PWA usable offline.
+I'd also like to make a "part 2" feature where the cards displayed are words in rashi script rather than just letters.
+I'm also contemplating changing the way cards are readded to have then inserted somewhere between the current position and the end instead.
+
+## running the app
 
 In the project directory, you can run:
 
@@ -13,58 +28,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
