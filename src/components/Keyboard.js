@@ -1,6 +1,4 @@
 import React from 'react'
-// import { connect } from 'react-redux'
-// import {virtualKeyboard} from '../store/inputString'
 
 const keboardArray = [
     ['ק','ר','א','ט','ו','ן','ם','פ'],

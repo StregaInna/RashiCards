@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { loadRashiScript, nextCard, reAddCard, shuffleDeck } from '../store/cardDeck';
 import { correctAnswer, incorrectAnswer, resetScore } from '../store/score';
 import Keyboard from './Keyboard'
+import Feedback from './Feedback'
 
 
 
@@ -12,7 +13,8 @@ class FlashCard extends React.Component {
         this.state = {
             inputString: '',
             complete: false,
-            showKeyboard: false
+            showKeyboard: false,
+            correction: null
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -45,7 +47,11 @@ class FlashCard extends React.Component {
         if(this.state.inputString!==this.props.currentCard.letter){
             this.props.reAddCard()
             this.props.incorrectAnswer()
-        }else{this.props.correctAnswer()}
+            this.setState({correction: this.props.currentCard.letter})
+        }else{
+            this.props.correctAnswer()
+            this.setState({correction: null})
+        }
         if(this.props.cardIndex < (this.props.cardDeck.length -1)){
             this.props.nextCard()
         }else{this.setState({complete:true})}
@@ -73,6 +79,11 @@ class FlashCard extends React.Component {
                             </form>
                         </div>
                         <div>
+                            {this.props.cardIndex>0?(
+                                <div> 
+                                    <Feedback correction={this.state.correction} /> 
+                                </div>):(<div></div>)
+                            }
                             <h1>Current score is {this.props.score.correct}/{this.props.score.total}</h1>
                         </div>
                         <div>
